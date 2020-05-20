@@ -1,0 +1,20 @@
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+#authentication-container{
+  padding: 15px 10px !important;
+  border-radius: 15px;
+}
+
+button{
+  margin-left: 5px;
+}
+
+.button-container{
+  padding-top: 15px;
+}

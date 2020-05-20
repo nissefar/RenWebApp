@@ -1,0 +1,53 @@
+<div class="container">
+
+  <h2>Opret Bruger</h2>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" ngNativeValidate>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm">
+            <label for="firstname">Fornavn</label>
+            <input class="form-control" [(ngModel)]="member.firstname" name="firstname" required>
+          </div>
+
+          <div class="col-sm">
+            <label for="lastname">Efternavn</label>
+            <input class="form-control col-sm" [(ngModel)]="member.lastname" name="lastname" />
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="container">
+        <label for="email">Email</label>
+        <input class="form-control" [(ngModel)]="member.email" name="email" required="true"/>
+      </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm">
+            <label for="password">Adgangskode</label>
+            <input type="password" class="form-control" [(ngModel)]="member.password" name="password" required/>
+          </div>
+
+          <div class="col-sm">
+            <label for="repeatpassword">Gentag Kodeord</label>
+            <input type="password" class="form-control" [(ngModel)]="member.passwordConfirm" name="passwordConfirm" required="true"/>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <div class="container button-container">
+        <button type="submit" class="btn btn-primary float-right">Opret Bruger</button>
+        <a routerLink="/authentication/login" routerLinkActive="active" ><button type="button" class="btn btn-outline-primary float-right">Log Ind</button></a>
+      </div>
+
+    </form>
+
+  </div>

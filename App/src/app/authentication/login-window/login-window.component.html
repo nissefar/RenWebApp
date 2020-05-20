@@ -1,0 +1,27 @@
+<div class="container">
+
+<h2>Login</h2>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm">
+          <label for="email">Email</label>
+          <input class="form-control" [(ngModel)]="member.email" name="email" required/>
+        </div>
+
+        <div class="col-sm">
+          <label for="password">Adgangskode</label>
+          <input class="form-control" [(ngModel)]="member.password" name="password" required/>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container button-container">
+      <button type="submit" class="btn btn-primary float-right">Log Ind</button>
+      <a routerLink="/authentication/createuser" routerLinkActive="active" ><button type="button" class="btn btn-outline-primary float-right">Opret Bruger</button></a>
+    </div>
+  </form>
+</div>
