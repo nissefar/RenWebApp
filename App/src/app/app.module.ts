@@ -4,14 +4,14 @@ import { HttpClientModule }    from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginWindowComponent } from './authentication/login-window/login-window.component';
 import { FormsModule } from '@angular/forms';
-import { CreateUserWindowComponent } from './authentication/create-user-window/create-user-window.component';
-import { AuthenticationContainerComponent } from './authentication/authentication.component';
 import { WorkPageComponent } from './workspace/work-page/work-page.component';
 import { WorkspaceSidebarComponent } from './workspace/workspace-sidebar/workspace-sidebar.component';
-import { ProjectListComponent } from './workspace/project-list/project-list.component';
-import { ToolBoxComponent } from './workspace/tool-box/tool-box.component';
+import { ProjectListComponent } from './workspace/workspace-sidebar/sidebar-content/project-list/project-list.component';
+import { ToolBoxComponent } from './workspace/workspace-sidebar/sidebar-content/tool-box/tool-box.component';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { AuthGuardService } from './authentication/auth-guard/auth-guard.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -21,14 +21,20 @@ import { ToolBoxComponent } from './workspace/tool-box/tool-box.component';
     WorkspaceSidebarComponent,
     ProjectListComponent,
     ToolBoxComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    JwtHelperService,
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -28,11 +28,15 @@ apiDataService: ApiDataService;
     this.apiDataService.postMember(this.member)
     .subscribe(
       result => {
+        console.log("In Onsubmi1t");
         console.log(this.passCheck(form));
         console.log(result);
         form.reset();
       },
-      error => console.log('err', error)
+      error => {
+        console.log("In Onsubmi2t");
+        console.log('err', error)
+      }
     )
 
   }

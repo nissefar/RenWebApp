@@ -22,12 +22,18 @@ ApiPath: String;
 
   validateMember(email: string, token: string):Observable<Member>{
     let options: any = {
-      headers: {'authorization': token},
-      body: { 'body': {'email': email }
-  }
+      headers: {'authorization': token }
     }
     let member: any = this.http.get(this.ApiPath+ "/members/" + email, options);
     return member;
+  }
+
+  getProjects(token: string):Observable<any>{
+    let options: any = {
+      headers: {'authorization': token }
+    }
+    let files = this.http.get(this.ApiPath+'/members/files', options);
+    return files;
   }
 
 }

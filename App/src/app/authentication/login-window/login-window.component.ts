@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiDataService } from '../../member/api-data.service';
 import { Member } from '../../member/member';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-window',
@@ -15,7 +16,7 @@ export class LoginWindowComponent implements OnInit {
   apiDataService:ApiDataService;
   member: Member = {};
 
-  constructor(private ApiDataService: ApiDataService) {
+  constructor(private ApiDataService: ApiDataService, public Router: Router) {
     this.apiDataService = ApiDataService;
    }
 
@@ -23,6 +24,7 @@ export class LoginWindowComponent implements OnInit {
     localStorage.setItem('Email', loginResponse.user.email);
     localStorage.setItem('Token', loginResponse.token);
     localStorage.setItem('Token expiry', loginResponse.tokenLifespan + Date.now());
+    this.Router.navigate(['workspace']);
  }
 
    onSubmit(form: NgForm){

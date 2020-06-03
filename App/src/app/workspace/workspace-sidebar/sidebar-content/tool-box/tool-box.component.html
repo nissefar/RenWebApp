@@ -1,0 +1,16 @@
+<div class="container">
+  <button (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="projectCollapse" type="button" class="collapsible MenuButton">
+    <div *ngIf="isCollapsed; else elseBlock"><img src="assets/images/toolbox+.png"></div>
+    <ng-template #elseBlock><h5>- Værktøjskasse -</h5></ng-template>
+  </button>
+</div>
+  <div class="collapsableMenu" id="projectCollapse" [ngbCollapse]="isCollapsed">
+    <div class="card">
+      <div class="card-body">
+        <ul>
+          <li *ngFor='let tool of tools'>{{tool.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
