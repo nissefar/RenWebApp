@@ -1,18 +1,24 @@
-<div class="container">
-  <button (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="projectCollapse" type="button" class=" button collapsible MenuButton">
-    <div *ngIf="isCollapsed; else elseBlock"><h5>+ Projekter +</h5></div>
-    <ng-template #elseBlock><h5>- Projekter -</h5></ng-template>
-  </button>
-</div>
-  <div class="collapsableMenu" id="projectCollapse" [ngbCollapse]="isCollapsed">
+  <div class="container SidebarHeader">
+    <button (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="projectCollapse" type="button" class=" button collapsible transparent-button">
+      <div *ngIf="isCollapsed; else elseBlock"><h5>
+        <img class="BigThumbnail" src="assets/images/folderClosed.png">
+        Projekter
+      </h5>
+    </div>
+      <ng-template #elseBlock><h5 class="ButtonTitle">
+        <img class="BigThumbnail" src="assets/images/folderOpen.png">
+        Projekter </h5></ng-template>
+    </button>
+  <div class="collapsableMenu" id="projectCollapse" [ngbCollapse]="isCollapsed" >
     <div class="card">
       <div class="card-body">
         <ul>
-          <li *ngFor='let file of files'>{{file.name}}
-            <hr>
+          <li *ngFor='let file of files'><a [routerLink]="[{outlets: { primary: ['projects', file.name], viewWindow: ['projects', file.name] } }]" routerLinkActive="active"><img class="SmallThumbnail" src="assets/images/folderClosed.png"> {{file.name}}</a>
           </li>
+          <li><app-new-project (updateList)="updateList($event)"></app-new-project></li>
         </ul>
       </div>
     </div>
   </div>
-
+</div>
+<hr>

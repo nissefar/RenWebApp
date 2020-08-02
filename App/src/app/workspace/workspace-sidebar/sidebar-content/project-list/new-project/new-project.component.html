@@ -1,0 +1,22 @@
+
+
+
+<div class=" SidebarHeader">
+  <button (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="projectCollapse" type="button" class=" button collapsible transparent-button">
+    <div *ngIf="isCollapsed; else elseBlock">
+      <p><img class="SmallThumbnail" src="assets/images/folderClosed.png"> Nyt Projekt</p>
+  </div>
+    <ng-template #elseBlock><p class="ButtonTitle">
+      <img class="SmallThumbnail" src="assets/images/folderOpen.png">
+      Nyt Projekt </p></ng-template>
+  </button>
+<div class="collapsableMenu" id="projectCollapse" [ngbCollapse]="isCollapsed" >
+  <div class="card">
+    <div class="card-body">
+
+  <form  #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <input class="form-control" placeholder="navn" [(ngModel)]="project" name="projectName" required>
+    <button type="submit" class="btn btn-primary float-right">Opret</button>
+  </form>
+
+</div>

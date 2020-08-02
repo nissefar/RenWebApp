@@ -1,14 +1,46 @@
+
+
+div{
+  background-color: transparent;
+}
 ul{
   list-style: none;
   text-align: left;
-  padding-left: 10px;
+  padding-inline-start: 5px;
+}
+
+.BigThumbnail{
+  width: 30px;
+  height: 30px;
+}
+
+.SmallThumbnail{
+  width: 20px;
+  height: 20px;
 }
 
 
-
-.MenuButton{
-  border-radius: 25px;
-  padding: 7px 15px 2px 15px;
-  border: 2px solid red($color: #0f0d0d);
+.SidebarHeader{
+  text-align: left;
+  margin-left: 0;
+  background-color: transparent;
+  border: none;
+  text-transform: capitalize;
+  width: 100%;
 }
 
+.transparent-button{
+  border: none;
+  background-color: transparent;
+  padding-left: 0;
+}
+
+
+.card{
+  border:none;
+}
+
+.card-body{
+  margin: 0;
+  padding: 0;
+}

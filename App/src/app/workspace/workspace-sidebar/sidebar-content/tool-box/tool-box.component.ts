@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tool-box.component.scss', '../styles.scss']
 })
 export class ToolBoxComponent implements OnInit {
-  public isCollapsed = true;
-  public tools = [{'name': 'Billede'},{'name': 'Boks'}]
+  public isCollapsed = false;
   constructor() { }
 
   ngOnInit(): void {

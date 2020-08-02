@@ -1,0 +1,67 @@
+<div id="editUserContainer" class="container">
+
+  <h6>Rediger Bruger</h6>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" ngNativeValidate>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm">
+            <label for="firstname">Fornavn</label>
+            <input class="form-control" [(ngModel)]="member.firstname" name="firstname" required>
+          </div>
+
+          <div class="col-sm">
+            <label for="lastname">Efternavn</label>
+            <input class="form-control" [(ngModel)]="member.lastname" name="lastname" required/>
+          </div>
+
+        </div>
+      </div>
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <div class="custom-file ">
+            <label class="custom-file-label" for="file">Vælg Profilbillede</label>
+            <input type="file"
+               id="file"
+               name="profilePic"
+               (change)="handleFileInput($event.target.files)"
+              >
+            </div>
+            </div>
+          </div>
+    </div>
+
+      <div class="container">
+        <div class="row">
+
+          <div class="col-sm">
+            <label for="password">Adgangskode</label>
+            <input type="password" class="form-control" [(ngModel)]="member.password" name="password" />
+          </div>
+
+          <div class="col-sm">
+            <label for="repeatpassword">Gentag</label>
+            <input type="password" class="form-control" [(ngModel)]="member.passwordConfirm" name="passwordConfirm" />
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="container button-container col-sm">
+            <button type="button" [routerLink]="['']" routerLinkActive="router-link-active" class="btn btn-secondary float-right">Afbryd</button>
+          </div>
+          <div class="container button-container col-sm">
+            <button  type="button" (click)="onSubmit(form)" [routerLink]="['']" routerLinkActive="router-link-active" class="btn btn-secondary float-right"  class="btn btn-primary float-right">OK</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+  </div>

@@ -1,0 +1,25 @@
+
+<div class="container ">
+  <div class="SidebarHeader"><h5>
+    <button class="transparent-button"  routerLink="/"><img class="BigThumbnail" src="assets/images/FolderBack.png"></button>
+    {{Project}}</h5></div>
+
+  <ul>
+      <li *ngFor='let file of projectFiles'>
+        <p>
+          <img class="SmallThumbnail"  src="assets/images/{{file.slice(file.lastIndexOf('.')+1)}}.png">
+           {{file}}
+          </p>
+        </li>
+    </ul>
+  <hr>
+
+    <div>
+        <app-tool-box></app-tool-box>
+    </div>
+  <hr>
+
+
+</div>
+
+

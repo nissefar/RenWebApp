@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Member } from '../../member/member';
-import { ApiDataService } from '../../member/api-data.service';
+import { ApiDataService } from '../../Api-Services/api-data.service';
 import { NgForm } from '@angular/forms';
 import { from } from 'rxjs';
 
@@ -19,22 +19,16 @@ apiDataService: ApiDataService;
   }
 
   private passCheck(form: NgForm){
-    console.log(form.value['password'], " ", form.value['passwordConfirm']);
     return (form.value['password'] === form.value['passwordConfirm']) ? true : false ;
   }
 
   onSubmit(form: NgForm){
-    console.log("In Onsubmit");
     this.apiDataService.postMember(this.member)
     .subscribe(
       result => {
-        console.log("In Onsubmi1t");
-        console.log(this.passCheck(form));
-        console.log(result);
         form.reset();
       },
       error => {
-        console.log("In Onsubmi2t");
         console.log('err', error)
       }
     )

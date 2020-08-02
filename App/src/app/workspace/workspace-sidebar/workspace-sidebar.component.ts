@@ -7,12 +7,11 @@ import { Member } from 'src/app/member/member';
   styleUrls: ['./workspace-sidebar.component.scss']
 })
 export class WorkspaceSidebarComponent implements OnInit {
-  @Input() member: Member;
-
   constructor() {
   }
 
   ngOnInit(): void {
   }
+
 
 }

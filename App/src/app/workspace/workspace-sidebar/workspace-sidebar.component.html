@@ -1,19 +1,10 @@
 <div id=sidebar>
 
-  <div class="container" id="imageContainer">
-    <img id="profilePic" src="../../../assets/images/profilePlaceholder.png">
-    <p class="nameOutput">{{member.firstname}} {{member.lastname}}</p>
-  </div>
+  <router-outlet name="profileOutlet"></router-outlet>
+  <hr>
+  <router-outlet></router-outlet>
 
-<hr>
 
-<div class="container">
-  <app-project-list></app-project-list>
-</div>
 
-<hr>
 
-  <div class="container">
-    <app-tool-box></app-tool-box>
 
-  </div>
