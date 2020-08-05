@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { Member } from 'src/app/member/member';
 import { ApiDataService } from 'src/app/Api-Services/api-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LogoutService } from 'src/app/authentication/logout-service/logout.service';
 
 @Component({
   selector: 'app-profile-picture',
@@ -17,7 +18,7 @@ export class ProfilePictureComponent implements OnInit {
   searchParam: string;
   timeStamp: Number;
 
-  constructor(private sanitizer: DomSanitizer, private apiDataService: ApiDataService, private route: ActivatedRoute) {
+  constructor(private _router: Router, private sanitizer: DomSanitizer, private apiDataService: ApiDataService, private route: ActivatedRoute, private logout: LogoutService) {
     this.token = localStorage.getItem('Token');
 
     this.route.params.subscribe(params => {
@@ -31,6 +32,13 @@ export class ProfilePictureComponent implements OnInit {
     this.updateProfile();
   }
 
+  logUserOut(): void{
+    this.logout.logout();
+    setTimeout(() => {
+      this._router.navigate(['authentication'])
+    }, 100);
+
+  }
 
   updateProfile(): void{
 

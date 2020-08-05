@@ -1,11 +1,28 @@
   <div  class="container" id="imageContainer">
     <img  id="profilePic" [src]="safeProfilePicUrl">
-    <button id="profileEditPicButton" [routerLink]="[{outlets: { profileOutlet: ['edit'] }}]" routerLinkActive="router-link-active"  >
-      <img id="profileEditPic" src="../../../assets/images/Edit.png">
-    </button>
+    
+    
   </div>
 
 
 
-<h6 id="nameOutput">{{member.firstname}} {{member.lastname}}</h6>
+<h6 id="nameOutput">{{member.firstname}} {{member.lastname}} </h6>
+<button
+  id="logoutButton" 
+  (click)="logUserOut()"
+  ngbTooltip="Log Ud"
+  placement="bottom"
+  
+  >
+  <img id=logoutPic src="../../../assets/images/logout.png">
+</button>
+<button 
+      id="profileEditPicButton"
+      [routerLink]="[{outlets: { profileOutlet: ['edit'] }}]" 
+      routerLinkActive="router-link-active"
+      ngbTooltip="Rediger Bruger"
+      placement="bottom"
+    >
+      <img id="profileEditPic" src="../../../assets/images/Edit.png">
+    </button>
 

@@ -1,0 +1,22 @@
+@media(max-width: 576px){
+    #mobileError{
+        display: block;
+        width: 100 vw;
+        height: 100vh;
+    }
+    #project{
+        display: none;
+    }
+}
+
+@media(min-width: 576px){
+    #mobileError{
+        display: none;
+        
+    }
+    #project{
+        width: 100 vw;
+        height: 100vh;
+        display: block;
+    }
+}

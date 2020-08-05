@@ -31,8 +31,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -125,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "App"
+    }
+  },
+  "defaultProject": "App",
+  "cli": {
+    "analytics": "6be5ab64-2e10-487f-8a69-561c63b50bcc"
+  }
 }

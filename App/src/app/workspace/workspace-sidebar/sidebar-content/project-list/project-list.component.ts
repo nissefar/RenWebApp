@@ -9,7 +9,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProjectListComponent implements OnInit {
   public isCollapsed = false;
-  files = [];
+  files: [] = [];
+  filesExists: boolean;
   constructor(private apiDataService: ApiDataService, private router: Router, private route: ActivatedRoute) { }
 
   updateList($event): void{

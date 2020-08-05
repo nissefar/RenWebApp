@@ -5,6 +5,7 @@ import { ProjectListComponent } from './workspace-sidebar/sidebar-content/projec
 import { WorkspaceViewWindowComponent } from '../workspace-view-window/workspace-view-window.component';
 import { ProfilePictureComponent } from './workspace-sidebar/sidebar-content/profile-picture/profile-picture.component';
 import { ProfileEditComponent } from './workspace-sidebar/sidebar-content/profile/profile-edit/profile-edit.component';
+import { DragareaComponent } from './dragarea/dragarea/dragarea.component';
 
 
 
@@ -12,7 +13,8 @@ export const routes: Routes = [
   { path: '', component: ProfilePictureComponent, outlet: "profileOutlet"},
   { path: 'edit', component: ProfileEditComponent, outlet: "profileOutlet"},
   { path: 'projects/:project', component: ProjectComponent},
-  { path: 'projects/:project', component: WorkspaceViewWindowComponent, outlet: "viewWindow"},
+  { path: 'projects/:project', component: DragareaComponent, outlet: "viewWindow"},
+  // { path: 'projects/:project', component: WorkspaceViewWindowComponent, outlet: "viewWindow"},
   { path: '' , component: ProjectListComponent},
 ];
 

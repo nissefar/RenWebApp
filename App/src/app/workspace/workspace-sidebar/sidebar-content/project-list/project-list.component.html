@@ -13,8 +13,12 @@
     <div class="card">
       <div class="card-body">
         <ul>
+          <div *ngIf="files.length > 0; else noProject">
           <li *ngFor='let file of files'><a [routerLink]="[{outlets: { primary: ['projects', file.name], viewWindow: ['projects', file.name] } }]" routerLinkActive="active"><img class="SmallThumbnail" src="assets/images/folderClosed.png"> {{file.name}}</a>
           </li>
+        </div>
+        <ng-template #noProject>
+        </ng-template>
           <li><app-new-project (updateList)="updateList($event)"></app-new-project></li>
         </ul>
       </div>
